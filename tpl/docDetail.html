@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<title><{$result['doctor_name']}>_整形医生查询_整形_新浪女性_新浪网</title>
+<meta name="keywords" content="<{$result['doctor_name']}>,整形医生专家" />
+<meta name="description" content="<{cms_substr($result.description,220)}>" />
+<link rel="stylesheet" href="/statics/css/common.css" type="text/css" />
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+<script src="/statics/js/common.js" type="text/javascript" language="javascript"></script>
+
+</head>
+<body>
+<div class="wrap">
+  <!-- 导航 begin -->
+  <{include file="include/sina_nav1.html"}>
+  <!-- 导航 end -->
+   <!--二级导航 start-->
+  <div id="nav" class="nav clearfix">
+	<{include file="include/sina_nav2.html"}>
+  	<div class="links fgrey">
+		<{assign var="i" value=0}>
+		<{foreach from=$nav item=one}>
+			<{foreach from=$one item=urlInfo}>
+				<a href="<{$urlInfo.url}>"><{$urlInfo['name']}></a> 
+			<{/foreach}>
+			<{if $i!=count($nav)-1}> &gt; <{/if}>
+		<{assign var="i" value=$i+1}>
+		<{/foreach}>
+		 &gt; <{$result['doctor_name']}>
+	</div>
+  </div>
+  
+  <!--二级导航 end-->
+  <!-- main -->
+<style>
+.blk_intro{}
+.blk_intro h3{ font-size:25px; font-family:"黑体";  height:40px; line-height:40px;}
+.blk_intro p{ font-size:16px; line-height:30px;}
+.blk_intro .txts{ color:#666666; line-height:25px; font-size:14px; padding:20px 0 0; overflow:hidden;zoom:1; }
+.blk_intro .open{ display:block; text-align:right; cursor:pointer;}
+.blk_ysdt{ margin-top:20px}
+.blk_qtys{ padding:30px 0 0;}
+.blk_qyts .sel .sim_select{   position: relative;width: 115px;}
+.blk_qyts .sel{ float:left; width:85px;}
+.blk_qtys .sel h3{ width:85px;}
+.blk_qtys .pictxt .pic{ padding:20px 0 0; margin-right:9px; display:inline;}
+.blk_qtys .pictxt p{ font-weight:bold; text-align:center; padding:10px 0; color:#999999}
+.blk_qtys .pictxt  a.fblue:link,.blk_qtys .pictxt a.fblue:visited{ color:#3499c7!important}
+
+
+.tit01{ border-bottom:2px solid #cccccc; position:relative; }
+.tit01 .tt{ background:url(/statics/images/pub_yan_tit.png) 999px 999px no-repeat; line-height:999px ; overflow:hidden;zoom:1; height:30px; float:left}
+.tit01 .city{ position:absolute; right:145px; top:5px; color:#666}
+.tit01 #ysdt{ background-position:0 0; width:170px;}
+.tit01 #qtys{ background-position:0 -40px; width:225px;}
+.tit01 #xgcs{ background-position:0 -120px; width:215px;}
+.tit01 .rt{ display:block;height:40px;  position:absolute; right:10px; top:5px;}
+.list02 li{ background-image:url(/statics/images/pub_yan_tit.png);background-position:-225px 20px; background-repeat:no-repeat; padding-left:20px; font-size:14px; height:40px; line-height:40px; padding-right:10px;}
+.list02 li.bg{ background-color:#f3f3f3;}
+.list02 li .rt i{ font-style:normal; color:#999999}
+.list02 .rt{ float:right; _margin-top:-40px; line-height:40px; height:40px; font-size:12px; color:#666666;}
+
+</style>  
+
+
+  <div class="part01">
+  		<div class="p_l">
+        	<div class="blk_intro" id="blk_intro">
+            	<div class="pictxt clearfix"> 
+                    <div class="pic">
+                   		<img src="<{if $result.doctor_pict}>http://hospitalimage.hxkang.com/<{$result.doctor_pict}><{else}>/statics/images/doc125X125.gif<{/if}>" onerror="this.src='/statics/images/doc150X150.jpg';" width="165" height="165" alt="" />
+                    </div>
+                    <div class="txt">
+                        <h3 class="fblue">
+						<input type="hidden" id="body_name" value="<{$result['operations']}>"/>
+						<{$result['doctor_name']}></h3>
+                        <p>职　　称：<{$result['job_titles']}></p>
+                        <p>从医年限：<{if $result['work_period']>0}><{$result['work_period']}>年<{else}>未知<{/if}></p>
+                        <p>所属医院：<a href="http://www.517mr.com/hospital/<{$result.hosp_id}>/"><{$result.hosp_name}></a></p>
+                        <p>擅长项目：<span class="forg"><{$result['expert']}></span></p>
+                    </div>
+                </div>
+                
+                <div class="expand" id="expand">
+                	<div class="txts clearfix">
+                         <{$result['description']}>
+                    </div>
+                    <div class="fblue open" id="open">[+展开]</div>
+                </div>
+                <script>
+                (function(){
+function byClass(str,root,tag){if(root){root=typeof root=="string"?document.getElementById(root):root;}else{root=document.body;}tag=tag||"*";var els=root.getElementsByTagName(tag),arr=[];for(var i=0,n=els.length;i<n;i++){for(var j=0,k=els[i].className.split(" "),l=k.length;j<l;j++){if(k[j]==str){arr.push(els[i]);break;}}}return arr;};
+//20130115 added by Yan					
+function expand(btn,txt,h,parent){var btn=byClass(btn,parent);var txtdv=byClass(txt,parent);var hh=h;var parent=parent;var len=btn.length;for(var i=0;i<len;i++){txtdv[i].style.height=hh;(function(){var x=i;btn[x].onclick=function(){if(txtdv[x].style.height==hh){txtdv[x].style.height="auto";this.innerHTML="[-收起]";}else{this.innerHTML="[+展开]";txtdv[x].style.height=hh;}}})();}};
+
+                  expand("open","txts","223px","expand")
+										
+					})();
+                
+                </script>
+            </div>
+            
+            <!--医生动态-->
+            <div class="blk_ysdt">
+            	<div class="tit01 clearfix">
+                	<h2 class="tt" id="ysdt">医生动态</h2>
+                </div>
+                <ul class="list02 fblue">
+                	<li><a href="url" target="_blank">炎炎夏日怎样做个清爽睡美人？</a><span class="rt">（9/3470)　<i class="fgrey">2012-07-31 20:54</i></span></li>
+                    <li class="bg"><a href="url" target="_blank">3.15特稿：整形美容最常见的8个消费陷阱</a><span class="rt">（9/3470)　<i class="fgrey">2012-07-31 20:54</i></span></li>
+                    <li><a href="url" target="_blank">炎炎夏日怎样做个清爽睡美人？</a><span class="rt">（9/3470)　<i class="fgrey">2012-07-31 20:54</i></span></li>
+                    <li  class="bg"><a href="url" target="_blank">3.15特稿：整形美容最常见的8个消费陷阱</a><span class="rt">（9/3470)　<i class="fgrey">2012-07-31 20:54</i></span></li>
+                    <li><a href="url" target="_blank">炎炎夏日怎样做个清爽睡美人？</a><span class="rt">（9/3470)　<i class="fgrey">2012-07-31 20:54</i></span></li>
+                   <li class="bg"><a href="url" target="_blank">3.15特稿：整形美容最常见的8个消费陷阱</a><span class="rt">（9/3470)　<i class="fgrey">2012-07-31 20:54</i></span></li>
+                    <li><a href="url" target="_blank">炎炎夏日怎样做个清爽睡美人？</a><span class="rt">（9/3470)　<i class="fgrey">2012-07-31 20:54</i></span></li>
+                   <li class="bg"><a href="url" target="_blank">3.15特稿：整形美容最常见的8个消费陷阱</a><span class="rt">（9/3470)　<i class="fgrey">2012-07-31 20:54</i></span></li>
+                    <li><a href="url" target="_blank">炎炎夏日怎样做个清爽睡美人？</a><span class="rt">（9/3470)　<i class="fgrey">2012-07-31 20:54</i></span></li>
+                   <li class="bg"><a href="url" target="_blank">3.15特稿：整形美容最常见的8个消费陷阱</a><span class="rt">（9/3470)　<i class="fgrey">2012-07-31 20:54</i></span></li>
+                </ul>
+            </div>
+            
+            <!--其他医生推荐-->
+            <div class="blk_qtys">
+            	<div class="tit01 clearfix">
+					<h2 class="tt" id="qtys">其他医生推荐</h2>
+					<div class="city">按城市选择：</div>
+					<div class="rt">
+						<div class="sel">
+							<h3 id="selButton2" class=" fl_r_a" onclick="showArea('reg',206,30);"><{$strAjaxArea}></h3>
+						</div>
+					</div>
+					<{include file="include/selectArea.html"}>
+				</div>
+				
+              	<div class="pictxt" id="ajaxcontent">
+                	<{include file="include/ajax_docs.html"}>
+                </div>
+            </div>
+            
+            
+        </div>
+  		<div class="p_r">
+        	<{include file="include/sina_right.html"}>
+        </div>
+ 
+  </div>
+  
+ <{include file="include/sina_bottom.html"}>
+</div>
+</body>
+</html>

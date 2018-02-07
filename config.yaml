@@ -1,0 +1,15 @@
+name: learntest
+version: 3
+handle:
+
+- rewrite: if( path ~ "/item/(.*)/" ) goto "/index.php?c=item&a=view&id=$1"
+- rewrite: if( path ~ "/body/(.*)/page/(.*)/" ) goto "/index.php?/index.php?c=item&a=index&srcitem=$1&page=$2"
+- rewrite: if( path ~ "/body/page/(.*)/" ) goto "/index.php?/index.php?c=item&a=index&page=$1"
+- rewrite: if( path ~ "/body/(.*)/" ) goto "/index.php?/index.php?c=item&a=index&srcitem=$1"
+- rewrite: if( path ~ "/hotitem/(.*)/page/(.*)/" ) goto "/index.php?/index.php?c=item&a=index&hotkey=$1&page=$2"
+- rewrite: if( path ~ "/hotitem/(.*)/" ) goto "/index.php?/index.php?c=item&a=index&hotkey=$1"
+- rewrite: if( path ~ "/doc/(.*)/" ) goto "/index.php?c=doctor&a=view&id=$1"
+- rewrite: if( path ~ "/srcdoc/(.*)/page/(.*)/" ) goto "/index.php?c=doctor&a=index&srcdoc=$1&page=$2"
+- rewrite: if( path ~ "/srcdoc/page/(.*)/" ) goto "/index.php?c=doctor&a=index&page=$1"
+- rewrite: if( path ~ "/srcdoc/(.*)/" ) goto "/index.php?c=doctor&a=index&srcdoc=$1"
+- rewrite: if( path ~ "/srcdoc/" ) goto "/index.php?c=doctor&a=index"

@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta property="wb:webmaster" content="5d8dfade6df7ef5c" />
+<title>女性整形栏目</title>
+</head>
+<body>
+<link rel="stylesheet" href="/statics/css/common.css" type="text/css" />
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+<script src="/statics/js/common.js" type="text/javascript" language="javascript"></script>
+<script language="javascript" src="http://517mr.zoossoft.com/JS/LsJS.aspx?siteid=LHL31671888&float=0"></script>
+<div class="wrap">
+   <!--二级导航 start-->
+  <div id="nav" class="nav clearfix">
+  	<div class="links fgrey">
+	<{assign var="i" value=0}>
+	<{foreach from=$curNav item=one}>
+	<a href="<{$one.url}>"><{$one['name']}></a><{if $i!=count($curNav)-1}> &gt; <{/if}>
+	<{assign var="i" value=$i+1}>
+	<{/foreach}>
+	</div>
+  </div>
+  <!--二级导航 end-->
+  <!-- main -->
+<style>
+.sub01{}
+.sub01 .sub01_t{ border:1px solid #d1d1d1; background:#f9f9f9; height:45px; line-height:45px;}
+.sub01 .sub01_t span{ border-right:1px solid #d1d1d1; display:inline-block; padding:0 10px; font-size:14px; color:#3499c7; cursor:pointer}
+.sub01 .sub01_t .selected{ background:#fff; color:#666}
+.sub01 .sub01_c{ border:1px solid #d1d1d1; border-top:none;  padding:5px 0 4px;}
+.sub01 .sub01_c .bor1{ }
+.sub01 .sub01_c dl{ padding:10px 0;border-bottom:1px solid #D1D1D1}
+.sub01 .sub01_c dt{ width:80px; padding-left:20px; float:left;}
+.sub01 .sub01_c dd{ width:560px; float:left}
+.sub01 .sub01_c dd a{ margin:2px 7px; height:20px; line-height:20px; padding:0 3px; display:inline-block;}
+.sub01 .sub01_c dd a:hover,.sub01 .sub01_c dd a.cur{ background:#3499c7; color:#fff; text-decoration:none;}
+.result{ margin-top:20px;}
+.tit04{ background-color:#3499c7; padding:10px 10px 0; height:28px;}
+.tit04 .searchNum{ background-color:#FFF; padding:0 10px; line-height:28px; height:28px; float:left; font-size:14px;}
+.tit04 .searchNum span{ padding:0 5px; color:#ff6600;}
+.tit04 .rt{ float:right}
+.blk_items{ padding:10px;}
+.blk_items .item{ padding:20px 0; border-bottom:1px solid #ebebeb;}
+.item .pic{ padding-right:20px;_padding-right:18px;}
+.item .txt h3{ font-size:14px; font-weight:bold; padding-top:8px}
+.item .txt h3 span{ color:#999999; font-size:12px; padding-left:10px; font-weight:normal}
+.item .txt p{ height:30px; line-height:30px; font-size:14px; color:#666666}
+.item .btn{ float:right; margin-top:-30px; }
+.item .btn .detail{ background:url(/statics/images/zx_yan_main.png)  -80px -60px no-repeat; width:68px; height:20px; line-height:20px; font-size:12px; color:#fff; display:block; text-align:center}
+.item .btn a.detail:hover{ text-decoration:none; filter:Alpha(opacity=70);opacity:0.7}
+
+
+
+</style>  
+
+
+ 
+  		<div class="p_l">
+        	<div class="sub01" id="sub01">
+            	<div class="sub01_t"><span id="sub01_t1" class="selected">整形项目搜索</span><span id="sub01_t2"><a href="http://eladies.sina.com.cn/zx/yss/" target="_blank">整形医生搜索</a></span>
+                </div>
+                <div class="sub01_c" id="sub01_c1">
+                	<dl class="clearfix bor1">
+                    	<dt>整形部位：</dt>
+                        <dd class="fblue">
+							<{foreach from=$con1 item=one}>
+								<a href="<{$one.url}>" <{if $one.selected=='1'}>class="cur"<{/if}>><{$one.name}></a>
+							<{/foreach}>
+						</dd>
+                    </dl>
+                    
+                    <dl class="clearfix">
+                    	<dt>创始程度：</dt>
+                        <dd class="fblue">
+							<{foreach from=$con2 item=one}>
+								<a href="<{$one.url}>" <{if $one.selected=='1'}>class="cur"<{/if}>><{$one.name}></a>
+							<{/foreach}>
+						</dd>
+                    </dl>
+                    
+                    <dl class="clearfix">
+                    	<dt>手术方式：</dt>
+                        <dd class="fblue">
+							<{foreach from=$con3 item=one}>
+								<a href="<{$one.url}>" <{if $one.selected=='1'}>class="cur"<{/if}>><{$one.name}></a>
+							<{/foreach}>
+						</dd>
+                    </dl>
+                    
+                    <dl class="clearfix">
+                    	<dt>维持时间：</dt>
+                        <dd class="fblue">
+						<{foreach from=$con4 item=one}>
+							<a href="<{$one.url}>" <{if $one.selected=='1'}>class="cur"<{/if}>><{$one.name}></a>
+						<{/foreach}>
+						</dd>
+                    </dl>
+                    
+                    <dl class="clearfix nbor">
+                    	<dt>热门搜索：</dt>
+                        <dd class="fblue">
+							<{foreach from=$con5 item=one}>
+								<a href="<{$one.url}>" <{if $one.selected=='1'}>style="color:red"<{/if}>><{$one.name}></a>
+							<{/foreach}>
+						</dd>
+                    </dl>
+                    
+                    
+                    
+                </div>
+                
+
+            </div>
+            
+            
+            <div class="result">
+              	<div class="tit04">
+                	<h2 class="searchNum">根据您的选择，找到 <span><{$sum}></span> 个项目</h2>
+                    <div class="rt fwit"><a href="http://517mr.zoossoft.com/LR/Chatpre.aspx?id=LHL31671888&e=%e6%96%b0%e6%b5%aaA4T3&r=http%3a%2f%2feladies.sina.com.cn%2fzx%2f" target="_blank">整形有风险</a> <a href="http://517mr.zoossoft.com/LR/Chatpre.aspx?id=LHL31671888&e=%e6%96%b0%e6%b5%aaA4T3&r=http%3a%2f%2feladies.sina.com.cn%2fzx%2f" target="_blank">择医须谨慎</a></div>
+                </div>
+                
+                <div class="blk_items">
+				<{assign var="i" value=0}>
+				 <{foreach from=$results item=one}>
+                	<div class="item<{if $i==count($results)-1}> nbor<{/if}>">
+                    	<div class="pictxt clearfix"> 
+                            <div class="pic">
+                                <a href="http://eladies.sina.com.cn/zx/xmn/#item/<{$one.id}>/" target="_blank" class="twpic"><img src="/statics/images/items/<{$one.pic}>" width="116" height="116" alt="" /></a>
+                            </div>
+                            <div class="txt">
+                                <h3 class="fblue"><a href="http://eladies.sina.com.cn/zx/xmn/#item/<{$one.id}>/" target="_blank"><{$one.name}></a></h3>
+                                <p>适应人群：<{cms_substr($one.suit_user,50)}></p>
+                                <p>技术特性：<{cms_substr($one.tech_methods,50)}></p>
+                                <p>价格区间：<span class="forg"><{cms_substr($one.price,50)}></span></p>
+                            </div>
+                             
+                        </div>
+                        
+                        <div class="btn"><a href="http://eladies.sina.com.cn/zx/xmn/#item/<{$one.id}>/" class="detail" target="_blank">查看详情</a></div>
+
+                    </div>
+					<{assign var="i" value=$i+1}>
+					<{/foreach}>
+
+                   
+                </div>
+                        <{if $pager}>
+               	<p class="page">
+				
+						 <{assign var="srcitem" value=$smarty.get.srcitem}>
+						 <{assign var="hotkey" value=$smarty.get.hotkey}>
+						共有项目<{$pager.total_count}>个，共有<{$pager.total_page}>页（每页<{$pager.page_size}>个项目）：
+
+						<!--在当前页不是第一页的时候，显示前页和上一页-->
+						<{if $pager.current_page != $pager.first_page}>
+							<{if $srcitem}>
+							<a href="/body/<{$srcitem}>/page/<{$pager.first_page}>/">第一页</a> | 
+							<a href="/body/<{$srcitem}>/page/<{$pager.prev_page}>/">上一页</a> | 
+							<{else if $hotkey}>
+								<a href="/hotitem/<{urlencode($hotkey)}>/page/<{$pager.first_page}>/">第一页</a> | 
+								<a href="/hotitem/<{urlencode($hotkey)}>/page/<{$pager.prev_page}>/">上一页</a> | 
+							<{else}>
+								<a href="/body/page/<{$pager.first_page}>/">第一页</a> | 
+								<a href="/body/page/<{$pager.prev_page}>/">上一页</a> | 
+							<{/if}>
+						<{/if}>
+						<!--开始循环页码，同时如果循环到当前页则不显示链接-->
+						<{if $pager.current_page<=3}>
+							<{assign var="start" value=1}>
+						<{else}>
+							<{assign var="start" value=$pager.current_page-3}>
+						<{/if}>
+						<{section name=thepage start=$start-1 loop=$pager.all_pages max=6 show=true}>
+							<{if $pager.all_pages[thepage] != $pager.current_page}>
+								<{if $srcitem}>
+									<a href="/body/<{$srcitem}>/page/<{$pager.all_pages[thepage]}>/"><{$pager.all_pages[thepage]}></a>
+								<{else if $hotkey}>
+									<a href="/hotitem/<{urlencode($hotkey)}>/page/<{$pager.all_pages[thepage]}>/"><{$pager.all_pages[thepage]}></a>
+								<{else}>
+									<a href="/body/page/<{$pager.all_pages[thepage]}>/"><{$pager.all_pages[thepage]}></a>
+								<{/if}>
+							<{else}>
+								<span class="cur"><{$pager.all_pages[thepage]}></span>
+							<{/if}>
+						<{/section}>
+						<!--在当前页不是最后一页的时候，显示下一页和后页-->
+						<{if $pager.current_page != $pager.last_page}>
+						 | 
+							 <{if $srcitem}>
+								<a href="/body/<{$srcitem}>/page/<{$pager.next_page}>/">下一页</a> | 
+								<a href="/body/<{$srcitem}>/page/<{$pager.last_page}>/">尾页</a>
+							<{else if $hotkey}>
+								<a href="/hotitem/<{urlencode($hotkey)}>/page/<{$pager.next_page}>/">下一页</a> | 
+								<a href="/hotitem/<{urlencode($hotkey)}>/page/<{$pager.last_page}>/">尾页</a>
+							<{else}>
+								<a href="/body/page/<{$pager.next_page}>/">下一页</a> | 
+								<a href="/body/page/<{$pager.last_page}>/">尾页</a>
+							<{/if}>
+						<{/if}>	
+                </p>
+			<{/if}>
+            </div>
+        </div>
+</div>
+</body>
+</html>

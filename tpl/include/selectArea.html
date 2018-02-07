@@ -1,0 +1,112 @@
+<div id="_iframe_bg" style="display:none;z-index:800;left:0;position:absolute;top:0;width:100%;height:100%">
+	<iframe id="_iframe_cont" style="filter:alpha(opacity=0);width:100%;height:100%;opacity:0" ></iframe>
+</div>
+<input id="Province" name="Province" type="hidden" />
+<input id="City" name="City" type="hidden" />
+<input id="Province" name="Province" type="hidden" />
+ <input id="City" name="City" type="hidden" />
+ <link rel="stylesheet" type="text/css" href="/statics/css/citybox.css" />
+<script type="text/javascript" src="/statics/js/common.js"></script>
+<script type="text/javascript" src="/statics/js/iniCity.js?ver=2013"></script>
+<div id="cityBox">
+<a href="javascript:;" id="cityBoxClose">[关闭窗口]</a>
+<div id="cityT">
+城市选择器(点选城市即可搜索)
+</div>
+	<div id="mainCity" class="bor">
+		<span class="bold cF60">主要城市</span><br />
+		<div>
+			<span class="bold">华北东北：</span>
+			<a>北京</a>
+			<a>天津</a>
+			<a p="辽宁" >大连</a>
+			<a p="辽宁" >沈阳</a>
+			<a p="吉林" >长春</a>
+			<a p="黑龙江" >哈尔滨</a>
+		</div>
+		<div>
+			<span class="bold">华东地区：</span>
+			<a>上海</a>
+			<a p="江苏">南京</a>
+			<a p="江苏">苏州</a>
+			<a p="浙江">杭州</a>
+			<a p="浙江">宁波</a>
+			<a p="安徽">合肥</a>
+			<a p="福建">福州</a>
+			<a p="山东">济南</a>
+		</div>
+		<div>
+			<span class="bold">华南华中：</span>
+			<a p="广东">广州</a>
+			<a p="广东">深圳</a>
+			<a p="广东">东莞</a>
+			<a p="湖北">武汉</a>
+			<a p="湖南">长沙</a>
+			<a p="河南">郑州</a>
+		</div>
+		<div>
+			<span class="bold">西北西南：</span>
+			<a p="陕西">西安</a>
+			<a p="四川">成都</a>
+			<a>重庆</a>
+			<a p="云南">昆明</a>
+		</div>
+		
+	</div>
+<div id="allCity" class="bor">
+		<span class="bold cF60">所有省份</span><br />
+		<div>
+			<span class="bold">华北东北：</span>
+			<a>河北</a>
+			<a>山西</a>
+			<a>内蒙古</a>
+			<a>辽宁</a>
+			<a>吉林</a>
+			<a>黑龙江</a>
+		</div>
+		<div>
+			<span class="bold">华东地区：</span>
+			<a>江苏</a>
+			<a>浙江</a>
+			<a>安徽</a>
+			<a>福建</a>
+			<a>江西</a>
+			<a>山东</a>
+		</div>
+		<div>
+		<span class="bold">	华南华中：</span>
+			<a>广东</a>
+			<a>广西</a>
+			<a>海南</a>
+			<a>河南</a>
+			<a>湖北</a>
+			<a>湖南</a>
+		</div>
+		<div>
+			<span class="bold">西北西南：</span>
+			<a>陕西</a>
+			<a>甘肃</a>
+			<a>青海</a>
+			<a>宁夏</a>
+			<a>四川</a>
+			<a>贵州</a>
+			<a>云南</a>
+			<a>西藏</a>
+			<a>新疆</a>
+		</div>
+		
+	</div>
+	<div id="tempSelect">
+		<span id="domValues"></span>&nbsp;&nbsp;
+		<a id="toSelect" class="toSelect" href="javascript:;">[重新选择省份]</a>
+	</div>
+	<div class="bor"><div id="div_2"></div></div>
+	<div class="bor"><div id="div_3"></div></div>
+	<div class="cityBoxBott"></div>
+	
+</div>
+
+<script>
+
+	initCitys();
+</script>

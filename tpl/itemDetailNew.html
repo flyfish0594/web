@@ -1,0 +1,121 @@
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="/statics/css/common.css" type="text/css" />
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+<script src="/statics/js/common.js" type="text/javascript" language="javascript"></script>
+<script language="javascript" src="http://517mr.zoossoft.com/JS/LsJS.aspx?siteid=LHL31671888&float=0"></script>
+<div class="wrap">
+  
+   <!--二级导航 start-->
+  <div id="nav" class="nav clearfix">
+  	<div class="links fgrey">
+		<{assign var="i" value=0}>
+		<{foreach from=$nav item=one}>
+			<{foreach from=$one item=urlInfo}>
+				<a href="<{$urlInfo.url}>" target="_blank"><{$urlInfo['name']}></a> 
+			<{/foreach}>
+			<{if $i!=count($nav)-1}> &gt; <{/if}>
+		<{assign var="i" value=$i+1}>
+		<{/foreach}>
+		 &gt; <{$result['name']}>
+	</div>
+  </div>
+  
+  <!--二级导航 end-->
+  <!-- main -->
+<style>
+.sub01{}
+.sub01 .sub01_t{ border:1px solid #d1d1d1; background:#f9f9f9; height:45px; line-height:45px;}
+.sub01 .sub01_t span{ border-right:1px solid #d1d1d1; display:inline-block; padding:0 15px; font-size:14px; color:#3499c7; cursor:pointer; }
+.sub01 .sub01_t .selected{ background:#fff; color:#666}
+.sub01 .sub01_c{  padding:20px 0 4px; text-indent:2em; font-size:14px; color:#666666}
+.sub01 .txts{overflow:hidden;zoom:1}
+.sub01 .open{ display:block; text-align:right; cursor:pointer;}
+
+.blk_ysdt{ margin-top:20px}
+.blk_qtys{ padding:30px 0 0;}
+.blk_qyts .sel .sim_select{   position: relative;width: 115px;}
+.blk_qyts .sel{ float:left; width:85px;}
+.blk_qtys .sel h3{ width:85px;}
+.blk_qtys .pictxt .pic{ padding:20px 0 0; margin-right:9px; display:inline;}
+.blk_qtys .pictxt p{ font-weight:bold; text-align:center; padding:10px 0; color:#999999}
+.blk_qtys .pictxt  a.fblue:link,.blk_qtys .pictxt a.fblue:visited{ color:#3499c7!important}
+
+
+.tit01{ border-bottom:2px solid #cccccc; position:relative; }
+.tit01 .tt{ background:url(/statics/images/pub_yan_tit.png) 999px 999px no-repeat; line-height:999px ; overflow:hidden;zoom:1; height:30px; float:left}
+.tit01 .city{ position:absolute; right:145px; top:5px; color:#666}
+.tit01 #ysdt{ background-position:0 0; width:170px;}
+.tit01 #qtys{ background-position:0 -40px; width:225px;}
+.tit01 #xgcs{ background-position:0 -80px; width:215px;}
+.tit01 .rt{ display:block;height:40px;  position:absolute; right:10px; top:5px;}
+.tit04{ font-size:14px; font-weight:bold; margin-top:10px; height:40px; line-height:40px; padding-bottom:10px;}
+.tit04 em{ font-size:25px; font-family:"黑体"; font-weight:normal; font-style:normal; padding-right:10px}
+
+
+</style>  
+
+
+
+  		<div class="p_l">
+        	<div class="tit04">
+			<input type="hidden" id="body_name" value="<{$result['body_name']}>"/>
+			<em class="fblue"><{$result['name']}></em><span class="forg"><{$result['price']}></span>
+			</div>
+        	<div class="sub01" id="sub01">
+            	<div class="sub01_t"><span id="sub01_t1" class="selected">项目介绍</span><span id="sub01_t2">适应人群</span><span id="sub01_t3">技术特性</span><span id="sub01_t4">术前注意事项</span><span id="sub01_t5">术后注意事项</span>
+                </div>
+                <div class="sub01_c" id="sub01_c1">
+                	    <div class="txts"><{$result['descrip']}></div>
+                </div>
+                
+                <div class="sub01_c" id="sub01_c2" style="display:none">
+                	    <div class="txts"><{$result['suit_user']}></div>
+                </div>
+                
+                <div class="sub01_c" id="sub01_c3" style="display:none">
+                	    <div class="txts"><{$result['tech_methods']}></div>
+				</div>
+                
+                <div class="sub01_c" id="sub01_c4" style="display:none">
+                	  <div class="txts"><{$result['before_opera']}></div>
+				</div>
+                
+                <div class="sub01_c" id="sub01_c5" style="display:none">
+                	  <div class="txts"><{$result['after_opera']}></div>
+                </div>
+            	
+            </div>
+      
+            <script type="text/javascript" language="javascript">
+                <!--//--><![CDATA[//><!--
+                var SubShow = new SubShowClass("sub01");
+                SubShow.addLabel("sub01_t1","sub01_c1");
+                SubShow.addLabel("sub01_t2","sub01_c2");
+				SubShow.addLabel("sub01_t3","sub01_c3");
+				SubShow.addLabel("sub01_t4","sub01_c4");
+				SubShow.addLabel("sub01_t5","sub01_c5");
+								
+                //--><!]]>
+             </script>
+             
+            <!--其他医生推荐开始-->
+            <div class="blk_qtys clearfix">
+            	<div class="tit01 clearfix">
+                	<h2 class="tt" id="qtys">其他医生推荐</h2>
+                    <div class="city">按城市搜索：</div>
+				    <div class="rt">
+					   <div class="sel">
+							<h3 id="selButton2" class=" fl_r_a" onclick="showArea('reg',206,30);">全部城市</h3>
+					   </div>
+					</div>
+					<{include file="include/selectArea.html"}>
+                </div>
+				
+              	<div class="pictxt" id="ajaxcontent">
+                	<{include file="include/ajax_docs.html"}>
+                </div>
+            </div>
+			<!--其他医生推荐结束--> 
+
+        </div>
+  </div>

@@ -1,0 +1,5 @@
+<{foreach from=$docs item=one}>
+<div class="pic"><a href="http://eladies.sina.com.cn/zx/ysn/#doc/<{$one.doctor_id}>/" target="_blank"><img src="<{if $one.doctor_pict}>http://hospitalimage.hxkang.com/<{$one.doctor_pict}><{else}>/statics/images/doc125X125.gif<{/if}>" onerror="this.src='/statics/images/doc125X125.gif';" width="120" height="120" alt="<{$one.doctor_name}>" title="<{$one.doctor_name}>"/></a>
+	<p><a href="http://eladies.sina.com.cn/zx/ysn/#doc/<{$one.doctor_id}>/" target="_blank" class="fblue"><{$one.doctor_name}></a> <{$one.job_titles}></p>
+</div>
+<{/foreach}>

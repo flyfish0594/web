@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<title><{$title}>_整形_新浪女性_新浪网</title>
+<meta name="keywords" content="," />
+<meta name="description" content="此页面的说明" />
+<link rel="stylesheet" href="/statics/css/common.css" type="text/css" />
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+<script src="/statics/js/common.js" type="text/javascript" language="javascript"></script>
+
+</head>
+<body>
+<div class="wrap">
+  <!-- 导航 begin -->
+  <{include file="include/sina_nav1.html"}>
+  <!-- 导航 end -->
+   <!--二级导航 start-->
+  <div id="nav" class="nav clearfix">
+	<{include file="include/sina_nav2.html"}>
+  	<div class="links fgrey">
+		<{assign var="i" value=0}>
+		<{foreach from=$curNav item=one}>
+		<a href="<{$one.url}>"><{$one['name']}></a><{if $i!=count($curNav)-1}> &gt; <{/if}>
+		<{assign var="i" value=$i+1}>
+		<{/foreach}>
+	</div>
+  </div>
+  
+  <!--二级导航 end-->
+  <!-- main -->
+<style>
+.sub01{}
+.sub01 .sub01_t{ border:1px solid #d1d1d1; background:#f9f9f9; height:45px; line-height:45px;}
+.sub01 .sub01_t span{ border-right:1px solid #d1d1d1; display:inline-block; padding:0 10px; font-size:14px; color:#3499c7; cursor:pointer}
+.sub01 .sub01_t .selected{ background:#fff; color:#333333}
+.sub01 .sub01_c{ border:1px solid #d1d1d1; border-top:none;  padding:5px 0 4px;}
+.sub01 .sub01_c .bor1{ border-bottom:1px solid #D1D1D1}
+.sub01 .sub01_c dl{ padding:10px 0}
+.sub01 .sub01_c dt{ width:80px; padding-left:20px; float:left;}
+.sub01 .sub01_c dd{ width:560px; float:left}
+.sub01 .sub01_c dd a{ margin:2px 7px; height:20px; line-height:20px; padding:0 3px; display:inline-block;}
+.sub01 .sub01_c dd a:hover,.sub01 .sub01_c dd a.cur{ background:#3499c7; color:#fff; text-decoration:none;}
+.result{ margin-top:20px;}
+.tit04{ background-color:#3499c7; padding:10px 10px 0; height:28px;}
+.tit04 .searchNum{ background-color:#FFF; padding:0 10px; line-height:28px; height:28px; float:left; font-size:14px;}
+.tit04 .searchNum span{ padding:0 5px; color:#ff6600;}
+.tit04 .rt{ float:right}
+.blk_items{ padding:10px;}
+.blk_items .item{ padding:20px 0; border-bottom:1px solid #ebebeb;}
+.item .pic{ padding-right:20px;_padding-right:18px;}
+.item .txt h3{ font-size:14px; font-weight:bold; padding-top:8px}
+.item .txt h3 span{ color:#999999; font-size:12px; padding-left:10px; font-weight:normal}
+.item .txt p{ height:30px; line-height:30px; font-size:14px; color:#666666}
+.item .btn{ float:right; margin-top:-30px; }
+.item .btn .detail{ background:url(/statics/images/zx_yan_main.png)  -80px -60px no-repeat; width:68px; height:20px; line-height:20px; font-size:12px; color:#fff; display:block; text-align:center}
+.item .btn a.detail:hover{ text-decoration:none; filter:Alpha(opacity=70);opacity:0.7}
+
+
+
+</style>  
+
+
+  <div class="part01">
+  		<div class="p_l">
+        	<div class="sub01" id="sub01">
+            	<div class="sub01_t"><span id="sub01_t1"><a href="/index.php?c=item&a=index">整形项目搜索</a></span><span id="sub01_t2" class="selected">整形医生搜索</span>
+                </div>
+                
+                
+                <div class="sub01_c" id="sub01_c2">
+                	<dl class="clearfix bor1">
+                    	<dt>擅长项目：</dt>
+                        <dd class="fblue">
+							<{foreach from=$con1 item=one}>
+								<a href="<{$one.url}>" <{if $one.selected=='1'}>class="cur"<{/if}>><{$one.name}></a>
+							<{/foreach}>
+						</dd>
+                    </dl>
+                    <dl class="clearfix">
+                    	<dt>选择城市：</dt>
+                        <dd>
+							
+                            <div class="sel" onclick="showArea('doclist',0,0);$('#cityBox').attr('style','display:block;left:50%; top: 317px;margin-left:-374px;')" style="float:left">
+                              <h3><{$areaName}></h3>
+                            </div>
+							<a href="<{if $bodyUrl!='all'}>/index.php?c=doctor&a=index&srcdoc=<{$bodyUrl}><{else}>/index.php?c=doctor&a=index<{/if}>" <{if $areaUrl==''}>class="cur"<{/if}>>全部</a>
+							
+							
+			
+                        </dd>
+                    </dl>
+                    <dl class="clearfix">
+                    	<dt>热门城市：</dt>
+                        <dd class="fblue">
+							<{foreach from=$con2 item=one}>
+								<a href="<{$one.url}>" <{if $one.selected=='1'}>class="cur"<{/if}>><{$one.name}></a>
+							<{/foreach}>
+						</dd>
+                    </dl>
+                </div>
+            	
+            </div>
+            
+            <div class="result">
+				<{include file="include/selectArea.html"}>
+              	<div class="tit04">
+                	<h2 class="searchNum">根据您的选择，找到 <span><{$sum}></span> 个医生</h2>
+                    <div class="rt fwit"><a href="http://517mr.zoossoft.com/LR/Chatpre.aspx?id=LHL31671888&e=%e6%96%b0%e6%b5%aa%e6%95%b4%e5%bd%a2&r=http%3a%2f%2feladies.sina.com.cn%2fzx%2f&p=http%3a%2f%2feladies.sina.com.cn%2fzx%2f" target="_blank">整形有风险</a> <a href="http://517mr.zoossoft.com/LR/Chatpre.aspx?id=LHL31671888&e=%e6%96%b0%e6%b5%aa%e6%95%b4%e5%bd%a2&r=http%3a%2f%2feladies.sina.com.cn%2fzx%2f&p=http%3a%2f%2feladies.sina.com.cn%2fzx%2f" target="_blank">择医须谨慎</a></div>
+                </div>
+                
+                <div class="blk_items">
+					<{assign var="i" value=0}>
+                	<{foreach from=$results item=one}>
+					<div class="item<{if $i==count($results)-1}> nbor<{/if}>">
+                    	<div class="pictxt clearfix"> 
+                            <div class="pic">
+                                <a href="/index.php?c=doctor&a=view&id=<{$one.doctor_id}>" target="_blank" class="twpic"><img src="<{if $one.doctor_pict}>http://hospitalimage.hxkang.com/<{$one.doctor_pict}><{else}>/statics/images/doc125X125.gif<{/if}>" onerror="this.src='/statics/images/doc125X125.gif';" width="116" height="116" alt="" /></a>
+                            </div>
+                            <div class="txt">
+                                <h3 class="fblue"><a href="/index.php?c=doctor&a=view&id=<{$one.doctor_id}>" target="_blank"><{$one.doctor_name}></a><span><{$one.job_titles}></span></h3>
+                                <p>从医年限：<{if $one.work_period >0}><{$one.work_period}>年<{else}>未知<{/if}></p>
+                                <p>所属医院：<a href="http://www.517mr.com/hospital/<{$one.hosp_id}>/" target="_blank"><{$one.hosp_name}></a></p>
+                                <p>擅长项目：
+									<span class="forg">
+										<{cms_substr($one.expert,52)}>
+									</span>
+								</p>
+                            </div>
+                             
+                        </div>
+                        
+                        <div class="btn"><a href="/index.php?c=doctor&a=view&id=<{$one.doctor_id}>" target="_blank" class="detail">查看详情</a></div>
+                       
+           
+                    	
+                    </div>
+					<{assign var="i" value=$i+1}>
+					<{/foreach}>
+                   
+                </div>
+               <{if $pager}>
+               	<p class="page">
+                
+						 <{assign var="srcdoc" value=$smarty.get.srcdoc}>
+						共有医生<{$pager.total_count}>个，共有<{$pager.total_page}>页（每页<{$pager.page_size}>个医生）：
+
+						<!--在当前页不是第一页的时候，显示前页和上一页-->
+						<{if $pager.current_page != $pager.first_page}>
+							<{if $srcdoc}>
+							<a href="<{spUrl c=doctor a=index srcdoc=$srcdoc page=$pager.first_page}>">第一页</a> | 
+							<a href="<{spUrl c=doctor a=index srcdoc=$srcdoc page=$pager.prev_page}>">上一页</a> | 
+							<{else}>
+								<a href="<{spUrl c=doctor a=index page=$pager.first_page}>">第一页</a> | 
+								<a href="<{spUrl c=doctor a=index page=$pager.prev_page}>">上一页</a> | 
+							<{/if}>
+						<{/if}>
+						<!--开始循环页码，同时如果循环到当前页则不显示链接-->
+						<{if $pager.current_page<=3}>
+							<{assign var="start" value=1}>
+						<{else}>
+							<{assign var="start" value=$pager.current_page-3}>
+						<{/if}>
+						<{section name=thepage start=$start-1 loop=$pager.all_pages max=6 show=true}>
+							<{if $pager.all_pages[thepage] != $pager.current_page}>
+								<{if $srcdoc}>
+									<a href="<{spUrl c=doctor a=index srcdoc=$srcdoc page=$pager.all_pages[thepage]}>"><{$pager.all_pages[thepage]}></a>
+								<{else}>
+									<a href="<{spUrl c=doctor a=index page=$pager.all_pages[thepage]}>"><{$pager.all_pages[thepage]}></a>
+								<{/if}>
+							<{else}>
+								<span class="cur"><{$pager.all_pages[thepage]}></span>
+							<{/if}>
+						<{/section}>
+						<!--在当前页不是最后一页的时候，显示下一页和后页-->
+						<{if $pager.current_page != $pager.last_page}>
+						 | 
+							 <{if $srcdoc}>
+								<a href="<{spUrl c=doctor a=index srcdoc=$srcdoc page=$pager.next_page}>">下一页</a> | 
+								<a href="<{spUrl c=doctor a=index srcdoc=$srcdoc page=$pager.last_page}>">尾页</a>
+							<{else}>
+								<a href="<{spUrl c=doctor a=index page=$pager.next_page}>">下一页</a> | 
+								<a href="<{spUrl c=doctor a=index page=$pager.last_page}>">尾页</a>
+							<{/if}>
+						<{/if}>
+					
+                </p>
+			<{/if}>
+            </div>
+        </div>
+  		<div class="p_r">
+			<{include file="include/sina_right.html"}> 
+        </div>
+ 
+  </div>
+  
+ <{include file="include/sina_bottom.html"}>
+</div>
+</body>
+</html>

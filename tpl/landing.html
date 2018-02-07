@@ -1,0 +1,40 @@
+<html>
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+<script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2477038207" type="text/javascript" charset="utf-8"></script>
+
+<script>
+function checkBind(weiboid)
+{
+	 $.post("/index.php?c=user&a=ajaxCheckBind",{weiboid:weiboid},
+	  function(data){
+		if(data=='0')
+		{
+			window.open('/index.php?c=user&a=reg&weiboid='+weiboid);//绑定页面
+		}
+	  },
+  "html");//这里返回的类型有：json,html,xml,text
+}
+
+WB2.anyWhere(function(W){
+		W.widget.connectButton({
+			id: "wb_connect_btn",	
+			type:'3,2',
+			callback : {
+				login:function(o){	//登录后的回调函数
+					//alert("login: "+o.screen_name+o.id+o.name+o.location+o.gender+o.profile_image_url)
+					checkBind(o.id);
+				},
+				logout:function(){	//退出后的回调函数
+					alert('logout');
+				}
+			}
+		});
+	});
+</script>
+<head>
+	<title>着陆页</title>
+</head>
+<body>
+	<div id="wb_connect_btn">用新浪微博登录</div>
+</body>
+</html>

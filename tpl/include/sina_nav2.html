@@ -1,0 +1,86 @@
+<div id="navTop">
+	<ul>
+		<li><a href="http://eladies.sina.com.cn/" target="_blank">首页</a></li>
+		<li><a href="url" target="_blank">美容</a></li>
+		<li><a href="http://eladies.sina.com.cn/fashion/" target="_parent">服饰</a></li>
+		<li><a href="http://fashion.eladies.sina.com.cn/" target="_parent">时尚</a></li>
+		 <li><a href="http://eladies.sina.com.cn/cy/" target="_parent">产业</a></li>
+		<li><a href="http://eladies.sina.com.cn/fat/" target="_parent">美体</a></li>
+		<li><a href="http://eladies.sina.com.cn/feel/" target="_parent">情感</a></li>
+		<li><a href="http://eladies.sina.com.cn/hunjia/" target="_parent">婚嫁</a></li>
+		<li><a href="http://eladies.sina.com.cn/qg/koushu/" target="_parent">口述</a></li>	
+		<li><a href="http://eladies.sina.com.cn/news/" target="_parent">八卦</a></li>
+		<li class="selec">整形</li>
+		<li><a href="http://lady.weibo.com/" target="_parent">Lovelady</a></li>
+		<li><a href="http://product.eladies.sina.com.cn/list.php?i=1&dpc=1" target="_parent">试用中心</a></li>
+			<li><a href="http://eladies.sina.com.cn/photo/" target="_parent">图库</a></li>
+	</ul>
+	<span class="fgrey"><a href="http://eladies.sina.com.cn/beauty/rank/" target="_blank">排行</a>·<a href="http://eladies.sina.com.cn/subject/" target="_blank">专题</a>·<a href="http://blog.sina.com.cn/lm/eladies/" target="_blank">博客</a>·<a href="http://eladies.sina.com.cn/bbs/" target="_blank">论坛</a>·<a href="http://eladies.sina.com.cn/beauty/chanpinku/" target="_blank">化妆品库</a></span>
+
+</div>
+<div id="navBot" class=" fwit">
+    <ul>
+	<li><a href="http://eladies.sina.com.cn/beauty/chanpinku/" target="_blank">化妆品库</a></li>
+	<li><a href="http://eladies.sina.com.cn/beauty/skincare/" target="_blank">护肤</a></li>
+	<li><a href="http://eladies.sina.com.cn/beauty/makeup/" target="_blank">化妆</a></li>
+	<li><a href="http://eladies.sina.com.cn/beauty/hairdressing/" target="_blank">美发</a></li>
+	<li><a href="http://eladies.sina.com.cn/beauty/healthiness/" target="_blank">健康乐活</a></li>
+	<li><a href="http://eladies.sina.com.cn/beauty/perfume/" target="_blank">香水</a></li>
+	<li><a href="http://eladies.sina.com.cn/photo/" target="_blank">图库</a></li>
+	<li><a href="http://eladies.sina.com.cn/beauty/rank/" target="_blank">每日热文排行榜</a></li>
+    </ul>
+<!-- 搜索 begin -->
+<style type="text/css">
+.unify_search {float: right;font-family: '宋体';margin-top: 3px;}
+.unify_search .kw{float: left;width: 130px;height: 18px;margin-right: 6px;line-height: 18px;padding: 2px 2px 2px 20px;border: 0;background: url(http://i0.sinaimg.cn/lx/deco/2010/1014/search_sprite.png) 0 0 no-repeat;}
+.unify_search select{float: left;width: 60px;height: 22px;margin-right: 6px;*margin-top: 1px;border: 1px solid #ccc;padding: 1px;color: #666;}
+.unify_search .gray{color: #ccc;}
+.unify_search .sb{float: left;width: 58px;height: 22px;padding-bottom: 2px;overflow: hidden;*line-height: 23px;_line-height: 25px;cursor: pointer;border:0;background: url(http://i0.sinaimg.cn/lx/deco/2010/1014/search_sprite.png) -240px 0 no-repeat;color: #444;}
+</style>
+<form class="unify_search" id="unify_search" name="searchform" action="http://search.sina.com.cn/" method="post" target="_blank">
+
+<input type="text" name="q" class="kw gray" value="请输入关键词" onfocus="this.className='kw';if (this.value=='请输入关键词') {this.value=''}" onblur="if(this.value==''){this.className+=' gray';this.value='请输入关键词'}" />
+<select name="opt">
+    <option value="news" selected>新闻</option>
+    <option value="img">图片</option>
+    <option value="blog">博客</option>
+    <option value="video">视频</option>
+</select>
+<input type="submit" class="sb" value="搜 索" />
+</form>
+<script type="text/javascript">
+<!--
+//统一站内搜索
+document.getElementById('unify_search').onsubmit=function () {
+var kw=this.q.value;
+if (!kw || kw=='请输入关键词') {
+    alert('请输入搜索关键词!');
+    this.q.focus();
+    return false;
+}
+switch (this.opt.value) {
+    case 'zt':
+	this.action='http://search.sina.com.cn/?c=zt&range=title&q='+kw;
+	break;
+    case 'blog':
+	this.action='http://uni.sina.com.cn/c.php?t=blog&ts=bpost&stype=all&k='+kw;
+	break;
+    case 'tblog':
+	this.action='http://weibo.com/k/'+kw;
+	break;
+    case 'video':
+	this.action='http://video.sina.com.cn/search/index.php?k='+kw;
+	break;
+    case 'music':
+	this.action='http://music.sina.com.cn/yueku/search/s.php?t=all&key='+kw;
+	break;
+    default:
+	this.action='http://search.sina.com.cn/?from=chanel2&c='+this.opt.value+'&q='+kw;
+	break;
+}
+}
+//-->
+</script>
+
+<!-- 搜索 end -->
+</div>
